@@ -53,76 +53,62 @@
 - **市场适应性**：政策因子帮助投资者在政策变化时快速调整投资组合，以应对市场环境的变化。
 
 ## 数据需求
-对于市场因子，我们需要从CSMAR数据库获取以下数据：
-
-1. **市场指数数据**
-   - 获取沪深300指数或上证综合指数的日收盘价数据，以计算市场回报率（Rm）。
-
-2. **无风险利率数据**
-   - 获取中国国债的收益率数据，通常使用一年期国债的日收益率作为无风险利率（Rf）。
-
-### 数据频率
-- **日频数据**：使用日频数据可以更精确地计算市场因子的日回报率（Rm-Rf），适合高频交易策略和短期分析。
-
-通过这些数据，我们可以计算市场因子的风险溢价，进而用于因子投资策略的分析和构建。
 
 ## 项目结构
-Factor investment strategy/
-├── data/             # 数据存储目录
-│   ├── external/    # 外部数据源
-│   ├── processed/   # 处理后的数据
-│   └── raw/         # 原始数据
-├── docs/            # 文档目录
-│   ├── api/        # API文档
-│   ├── examples/   # 示例文档
-│   └── guides/     # 使用指南
-├── notebooks/       # 交互式开发目录
-│   ├── 01_data_exploration/    # 数据探索
-│   │   ├── financial_data.ipynb # 财务数据分析
-│   │   └── market_data.ipynb   # 市场数据分析
-│   ├── 02_factor_development/  # 因子开发
-│   │   ├── factor_ideas.ipynb  # 因子构思
-│   │   └── factor_testing.ipynb # 因子测试
-│   ├── 03_portfolio_construction/ # 组合构建
-│   │   ├── optimization.ipynb  # 优化测试
-│   │   └── rebalancing.ipynb   # 再平衡测试
-│   └── 04_analysis/           # 分析报告
-│       ├── performance.ipynb   # 绩效分析
-│       └── risk_analysis.ipynb # 风险分析
-├── results/         # 结果输出目录
-│   ├── figures/    # 图表输出
-│   ├── models/     # 模型输出
-│   └── reports/    # 报告输出
-├── src/            # 生产级别源代码目录
-│   ├── analysis/  # 分析模块
-│   │   ├── __init__.py
-│   │   ├── attribution.py # 归因分析
-│   │   ├── performance.py # 绩效分析
-│   │   └── risk.py    # 风险分析
-│   ├── data/      # 数据处理模块
-│   │   ├── __init__.py
-│   │   ├── cleaner.py # 数据清洗
-│   │   ├── loader.py  # 数据加载器
-│   │   └── processor.py # 数据预处理
-│   ├── factor/    # 因子构建模块
-│   │   ├── __init__.py
-│   │   ├── builder.py # 因子构建器
-│   │   ├── calculator.py # 因子计算
-│   │   └── validator.py # 因子验证
-│   ├── portfolio/ # 投资组合构建模块
-│   │   ├── __init__.py
-│   │   ├── optimizer.py # 组合优化
-│   │   ├── rebalancer.py # 再平衡
-│   │   └── risk_manager.py # 风险管理
-│   ├── utils/     # 工具函数
-│   │   ├── __init__.py
-│   │   ├── helpers.py # 辅助函数
-│   │   └── logger.py  # 日志工具
-│   └── main.py    # 项目入口文件
-├── tests/         # 测试代码目录
-│   ├── integration/  # 集成测试
-│   └── unit/     # 单元测试
-└── README.md      # 项目说明文档
+- **data/** - 数据存储目录
+  - processed/ - 处理后的数据
+  - raw/ - 原始数据
+- **docs/** - 文档目录
+  - api/ - API文档
+  - examples/ - 示例文档
+  - guides/ - 使用指南
+- **notebooks/** - 交互式开发目录
+  - 01_data_exploration/ - 数据探索
+    - financial_data.ipynb - 财务数据分析
+    - market_data.ipynb - 市场数据分析
+  - 02_factor_development/ - 因子开发
+    - factor_ideas.ipynb - 因子构思
+    - factor_testing.ipynb - 因子测试
+  - 03_portfolio_construction/ - 组合构建
+    - optimization.ipynb - 优化测试
+    - rebalancing.ipynb - 再平衡测试
+  - 04_analysis/ - 分析报告
+    - performance.ipynb - 绩效分析
+    - risk_analysis.ipynb - 风险分析
+- **results/** - 结果输出目录
+  - figures/ - 图表输出
+  - models/ - 模型输出
+  - reports/ - 报告输出
+- **src/** - 生产级别源代码目录
+  - analysis/ - 分析模块
+    - __init__.py
+    - attribution.py - 归因分析
+    - performance.py - 绩效分析
+    - risk.py - 风险分析
+  - data/ - 数据处理模块
+    - __init__.py
+    - cleaner.py - 数据清洗
+    - loader.py - 数据加载器
+    - processor.py - 数据预处理
+  - factor/ - 因子构建模块
+    - __init__.py
+    - builder.py - 因子构建器
+    - calculator.py - 因子计算
+    - validator.py - 因子验证
+  - portfolio/ - 投资组合构建模块
+    - __init__.py
+    - optimizer.py - 组合优化
+    - rebalancer.py - 再平衡
+    - risk_manager.py - 风险管理
+  - utils/ - 工具函数
+    - __init__.py
+    - helpers.py - 辅助函数
+    - logger.py - 日志工具
+  - main.py - 项目入口文件
+- **tests/** - 测试代码目录
+  - integration/ - 集成测试
+  - unit/ - 单元测试
+- **README.md** - 项目说明文档
 
 ## 技术栈
 - Python 3.8+

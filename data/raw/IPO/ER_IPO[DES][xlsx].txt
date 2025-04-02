@@ -1,0 +1,8 @@
+EventID [事件ID] - 记录IPO的事件ID
+InstitutionID [公司ID] - 只收录内地上市相关的公司事件公告，公告关联证券表里为A股和B股，公司ID为我司内部ID。
+Symbol [股票代码] - 
+SecurityID [证券ID] - 希施玛证券唯一性区分编码。
+ListedDate [上市日期] - YYYY-MM-DD，指代码的上市日期
+ListSign [是否借壳上市] - A是、B否
+EarliestBackdoorDate [最早借壳日期] - 借代码壳的最早的公司的上市日期
+LatestBackdoorDate [最新借壳日期] - 借代码壳的最新的公司的上市日期
